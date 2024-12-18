@@ -13,9 +13,7 @@ async function bootstrap() {
   app.use(requestIp.mw());
   app.enableCors();
   app.use(helmet());
-
   app.use(json({ limit: '50mb' }));
-
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   const config = new DocumentBuilder()
