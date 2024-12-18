@@ -12,7 +12,11 @@ async function bootstrap() {
 
   app.use(requestIp.mw());
   app.enableCors();
-  app.use(helmet());
+  app.use(helmet.contentSecurityPolicy());
+  app.use(helmet.dnsPrefetchControl());
+  app.use(helmet.crossOriginEmbedderPolicy());
+  app.use(helmet.crossOriginOpenerPolicy());
+  app.use(helmet.crossOriginResourcePolicy());
   app.use(json({ limit: '50mb' }));
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
