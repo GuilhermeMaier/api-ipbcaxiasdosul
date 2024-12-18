@@ -1,7 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import dayjs from 'dayjs';
+import * as dayjs from 'dayjs';
 import { json } from 'express';
 import * as helmet from 'helmet';
 import * as requestIp from 'request-ip';
