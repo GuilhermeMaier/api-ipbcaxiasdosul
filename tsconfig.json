@@ -15,7 +15,9 @@
     "outDir": "./dist",
     "incremental": true,
     "skipLibCheck": true,
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules/**", "dist"]
 }

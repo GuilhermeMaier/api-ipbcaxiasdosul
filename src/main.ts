@@ -1,9 +1,9 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { json } from 'express';
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 import * as requestIp from 'request-ip';
 import { AppModule } from './app.module';
 
@@ -12,11 +12,7 @@ async function bootstrap() {
 
   app.use(requestIp.mw());
   app.enableCors();
-  app.use(helmet.contentSecurityPolicy());
-  app.use(helmet.dnsPrefetchControl());
-  app.use(helmet.crossOriginEmbedderPolicy());
-  app.use(helmet.crossOriginOpenerPolicy());
-  app.use(helmet.crossOriginResourcePolicy());
+  app.use(helmet());
   app.use(json({ limit: '50mb' }));
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
