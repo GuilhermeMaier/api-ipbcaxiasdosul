@@ -1,4 +1,4 @@
-import { MongoDocument } from '@/database.module';
+import { MongoDocument } from '@/app.module';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { EMemberStatus } from './member.dto';
 

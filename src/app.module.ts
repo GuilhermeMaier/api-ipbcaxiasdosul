@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 import { AppController } from './app.controller';
 import { MemberModule } from './member/member.module';
+
+export class MongoDocument extends Document {}
 
 @Module({
   imports: [
